@@ -1,0 +1,85 @@
+ 1)SELECT *
+FROM students s 
+WHERE YEAR (date_of_birth) = 1990;
+
+2)SELECT *
+FROM courses c 
+WHERE cfu >10;
+
+3)SELECT *
+FROM students s 
+WHERE DAY(date_of_birth) > 30;
+
+4)SELECT * 
+FROM courses c, degrees d 
+WHERE period LIKE 'I semestre'
+AND `year` = 1
+and d.name  LIKE '%corso di laurea%';
+
+5)SELECT *  
+FROM exams e 
+WHERE HOUR (`hour`) >= 14
+and `date` =  '2020-06-20';
+
+6)SELECT d.name 
+FROM degrees d 
+WHERE d.name LIKE 'Corso di Laurea Magistrale%';
+
+7)SELECT COUNT(d.name) 
+FROM departments d;
+
+8)SELECT COUNT(*) 
+FROM teachers t
+where t.phone is NULL ;
+
+
+1)SELECT *
+FROM teachers t ;
+
+2)SELECT head_of_department 
+FROM departments d ;
+
+3)SELECT *
+FROM degrees d 
+WHERE d.name like '%laurea magistrale %';
+
+4)SELECT *
+FROM students s 
+WHERE s.name LIKE 'Marco';
+
+5)SELECT c.name , t.name , c.cfu 
+FROM courses c , teachers t
+where c.cfu >= 12;
+
+6)SELECT c.name , t.name , c.cfu 
+FROM courses c , teachers t
+where c.cfu > 10
+or c.cfu < 5;
+
+7)SELECT c.period , c.`year`, d.name 
+FROM courses c , degrees d 
+where d.name LIKE '%corso di laurea%'
+and c.`year` = 1 ;
+
+8)SELECT c.name ,c.website  
+FROM courses c 
+WHERE website IS NULL ;
+
+9)SELECT T.name ,t.phone 
+FROM teachers t 
+where t.phone IS NOT NULL;
+
+
+———BONUS——
+
+10)SELECT *
+FROM students s 
+WHERE S.name LIKE 'E%';
+
+11)SELECT COUNT(*) 
+FROM teachers t 
+WHERE T.name LIKE 'E%';
+
+12)SELECT COUNT(*) 
+FROM teachers t 
+WHERE t.phone is null;
